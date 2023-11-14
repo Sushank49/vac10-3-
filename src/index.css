@@ -27,6 +27,8 @@ body {
   color: var(--color-text);
   background-color: var(--color-background-900);
   padding: 2.4rem;
+  overflow: hidden;
+  height: 100vh;
 }
 
 /* ******* */
@@ -35,14 +37,14 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  height: 7.2rem;
+  height: 6rem;
   padding: 0 3.2rem;
   background-color: var(--color-primary);
   border-radius: 0.9rem;
 }
 
 .main {
-  margin-top: 2.4rem;
+  margin-top: 1.5rem;
   height: calc(100vh - 7.2rem - 3 * 2.4rem);
   display: flex;
   gap: 2.4rem;
@@ -55,8 +57,14 @@ body {
   background-color: var(--color-background-500);
   border-radius: 0.9rem;
   overflow-y: scroll;
+  overflow-x: hidden !important;
   scroll-behavior: smooth;
   position: relative;
+}
+
+.box::-webkit-scrollbar {
+  display: none;
+  scroll-behavior: smooth;
 }
 
 .loader {
@@ -139,7 +147,12 @@ body {
 .list {
   list-style: none;
   padding: 0.8rem 0;
-  overflow: hidden;
+  overflow: scroll;
+}
+
+.list::-webkit-scrollbar {
+  display: none;
+  scroll-behavior: smooth;
 }
 
 .list-watched {
@@ -338,6 +351,26 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.footer {
+  background-color: #343a40;
+  height: 3rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.6rem;
+  margin-top: 2rem;
+}
+
+.link:link,
+.link:visited {
+  color: #bdbdbd;
+  transition: all 0.3s;
+}
+
+.link:link:hover {
+  text-decoration: none;
+  transform: translateY(-3px);
 }
 
 /*
